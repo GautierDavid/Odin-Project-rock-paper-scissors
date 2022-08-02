@@ -5,6 +5,10 @@ let playerVictoryCount = 0;
 let computerVictoryCount = 0;
 let choiceArr = ["rock", "paper", "scissors"]
 
+let pUser = document.querySelector('.user-score');
+console.log(pUser)
+let pComputer = document.querySelector('.computer-score');
+
 
 let choiceButton = document.querySelectorAll('.choice');
 
@@ -33,6 +37,7 @@ function playRound(playerSelection, computerChoice) {
     } else if (playerSelection === "paper" && computerChoice === "rock" || playerSelection === "scissors" && computerChoice === "paper" || playerSelection === "rock" && computerChoice === "scissors") {
         console.log("You win! " + playerSelection + " beats " + computerChoice) 
         playerVictoryCount ++
+        console.log(playerVictoryCount)
 
     } else if (playerSelection === computerChoice) { 
         console.log("It's a Tie!")
@@ -46,7 +51,18 @@ function playRound(playerSelection, computerChoice) {
 
 
 function refreshScore(playerScore, computerScore) {
-    
+    console.log(playerScore)
+
+    if(playerScore < 5 && computerScore < 5) {
+        pUser.innerHTML = "My score: " + playerScore;
+        pComputer.innerHTML = "Computer score : " + computerScore;
+    } else if(playerScore === 5) {
+        pUser.innerHTML = "Congratulations, you win the game " + playerScore + " to " + computerScore + " !";
+        pComputer.style.visibility = "hidden";
+    } else if(computerScore === 5) {
+        pUser.innerHTML = "Too bad, you lose the game " + playerScore + " to " + computerScore + " !";
+        pComputer.style.visibility = "hidden";
+    }
 }
 
 
