@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    gap: 3rem;  
+    list-style: none;
+}
+
+li {
+    padding: 3rem;
+    border: 2px black solid;
+}
