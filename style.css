@@ -1,5 +1,29 @@
+:root{
+    --blue: #284b63;
+    --title: #991E29;
+    --gray: #b4b8ab;
+}
+
+body {
+    background-color: var(--blue);
+    color: var(--gray);
+    text-align: center;
+}
 h1 {
     text-align: center;
+    color: var(--title)
+}
+
+img {
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.rules{
+    text-align: center;
+    font-style: italic;
 }
 
 ul {
